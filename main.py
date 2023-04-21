@@ -48,10 +48,9 @@ def main():
     directories. If its files then it copies the files. If there
     are folders then it'll go through and copy the files in those folders.'''
     for items in os.listdir(dummydcim):
-        print(items)
-        if os.path.isdir(items):
-            '''Still need to work on this part'''
-            pass
+        fullpath = os.path.join(dummydcim, items)
+        if os.path.isdir(fullpath):
+            moveFiles(fullpath, jpgdummydest, rawdummydest)
         else:
             moveFiles(dummydcim, jpgdummydest, rawdummydest)
 
